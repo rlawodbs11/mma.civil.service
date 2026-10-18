@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+  <title>NAVER 로그인</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <div class="wrap">
+    <!-- 헤더: 네이버 공식 벡터 로고 -->
+    <header class="header">
+      <a href="https://www.naver.com" class="naver_logo" aria-label="NAVER">
+        <svg width="155" height="30" viewBox="0 0 155 30" fill="none" xmlns="http://www.w3.org/2000/svg">
+          <path fill-rule="evenodd" clip-rule="evenodd" d="M44.62 0 32.955 30h9.915l1.408-3.97H55.46L56.87 30h9.914L55.118 0H44.62Zm5.25 9.452 3.324 9.372h-6.65l3.325-9.372ZM98.57 0v30h23.477v-7.353h-13.999v-4.044h13.56v-7.206h-13.56V7.353h13.707V0H98.57ZM85.593 0l-6.999 19.727L71.595 0h-9.916l11.666 30h10.498L95.508 0h-9.915ZM20.268 0v16.056L9.187 0H0v30h9.624V13.944L20.706 30h9.186V0h-9.624ZM141.002 13.97h-5.103V7.647h5.103c1.732 0 3.135 1.416 3.135 3.162s-1.403 3.161-3.135 3.161Zm6.478 5.738.902-.38c3.457-1.46 5.216-4.618 5.216-8.625 0-3.79-1.371-6.593-4.074-8.333C147.012.753 143.753 0 139.269 0h-12.556v30h9.332v-8.383h3.353L145.084 30H155l-7.52-10.292Z" fill="#03C75A"/>
+        </svg>
+      </a>
+    </header>
+
+    <!-- 메인 로그인 카드 -->
+    <main class="login_card">
+      <!-- 네이버 탭 메뉴 -->
+      <ul class="login_tabs">
+        <li class="tab_item active"><button type="button">ID 로그인</button></li>
+        <li class="tab_item"><button type="button">일회용 번호</button></li>
+        <li class="tab_item"><button type="button">QR코드</button></li>
+      </ul>
+
+      <!-- 로그인 폼 -->
+      <form id="loginForm" autocomplete="off">
+        <div class="input_group">
+          <div class="input_row">
+            <input type="text" id="userId" placeholder="아이디" autocomplete="username" spellcheck="false" required />
+          </div>
+          <div class="input_row">
+            <input type="password" id="userPw" placeholder="비밀번호" autocomplete="current-password" required />
+          </div>
+        </div>
+
+        <div class="check_area">
+          <div class="check">
+            <input type="checkbox" id="keepLogin" checked />
+            <label for="keepLogin">로그인 상태 유지</label>
+          </div>
+          <div class="ip_check">
+            <span class="ip_text">IP보안</span>
+            <span class="ip_status on">ON</span>
+          </div>
+        </div>
+
+        <button type="submit" class="btn_login" id="loginSubmitBtn">로그인</button>
+      </form>
+
+      <!-- 퀵 버튼 링크 -->
+      <ul class="quick_btns">
+        <li><button type="button">아이디 찾기</button></li>
+        <li><span class="bar" aria-hidden="true">|</span></li>
+        <li><button type="button">비밀번호 찾기</button></li>
+        <li><span class="bar" aria-hidden="true">|</span></li>
+        <li><button type="button">회원가입</button></li>
+      </ul>
+    </main>
+
+    <!-- 푸터 -->
+    <footer class="footer">
+      <ul class="footer_links">
+        <li>이용약관</li>
+        <li><strong>개인정보처리방침</strong></li>
+        <li>책임의 한계와 법적고지</li>
+        <li>회원정보 고객센터</li>
+      </ul>
+      <p class="copyright">
+        <span class="logo_footer">NAVER</span> Corp.
+      </p>
+    </footer>
+  </div>
+
+  <script src="app.js"></script>
+</body>
+</html>

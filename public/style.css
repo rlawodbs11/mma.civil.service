@@ -1,0 +1,372 @@
+@charset "UTF-8";
+
+/* 네이버 공식 Pretendard & NanumSquare 웹폰트 */
+@import url("https://cdn.jsdelivr.net/gh/orioncactus/pretendard@v1.3.9/dist/web/static/pretendard.min.css");
+@import url("https://ssl.pstatic.net/static/nid/webfont/NanumSquareR.woff2");
+
+/* 기본 리셋 및 폰트 설정 */
+*, *::before, *::after {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+html {
+  font-size: 16px;
+  -webkit-text-size-adjust: 100%;
+}
+
+body {
+  background-color: #f5f6f7;
+  color: #111111;
+  font-family: "Pretendard", -apple-system, BlinkMacSystemFont, "Apple SD Gothic Neo", "Malgun Gothic", sans-serif;
+  letter-spacing: -0.3px;
+  min-height: 100vh;
+  min-height: 100dvh;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  padding: 24px 16px;
+}
+
+[hidden] {
+  display: none !important;
+}
+
+/* 전체 컨테이너 */
+.wrap {
+  width: 100%;
+  max-width: 460px;
+  margin: 0 auto;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+/* 헤더 공식 로고 */
+.header {
+  margin-bottom: 26px;
+  text-align: center;
+}
+
+.naver_logo {
+  display: inline-block;
+  line-height: 1;
+  transition: opacity 0.15s ease;
+}
+
+.naver_logo:hover {
+  opacity: 0.85;
+}
+
+.naver_logo svg {
+  display: block;
+  width: 155px;
+  height: 30px;
+}
+
+/* 메인 로그인 카드 */
+.login_card {
+  width: 100%;
+  background-color: #ffffff;
+  border: 1px solid #c6c6c6;
+  border-radius: 8px;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.04);
+  padding: 24px 28px 30px;
+  display: flex;
+  flex-direction: column;
+  gap: 18px;
+}
+
+/* 네이버 탭 메뉴 */
+.login_tabs {
+  display: flex;
+  list-style: none;
+  border: 1px solid #e3e5e8;
+  border-radius: 6px;
+  overflow: hidden;
+  background-color: #f8f9fa;
+}
+
+.tab_item {
+  flex: 1;
+  text-align: center;
+}
+
+.tab_item:not(:last-child) {
+  border-right: 1px solid #e3e5e8;
+}
+
+.tab_item button {
+  width: 100%;
+  height: 44px;
+  background: transparent;
+  border: none;
+  font-family: inherit;
+  font-size: 14px;
+  font-weight: 500;
+  color: #777777;
+  cursor: pointer;
+  transition: all 0.15s ease;
+}
+
+.tab_item.active {
+  background-color: #ffffff;
+}
+
+.tab_item.active button {
+  color: #03c75a;
+  font-weight: 700;
+}
+
+/* 폼 영역 */
+form#loginForm {
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+  width: 100%;
+}
+
+/* 인풋 묶음 */
+.input_group {
+  display: flex;
+  flex-direction: column;
+  border: 1px solid #dadada;
+  border-radius: 6px;
+  background-color: #ffffff;
+  transition: border-color 0.15s ease, box-shadow 0.15s ease;
+  overflow: hidden;
+}
+
+.input_group:focus-within {
+  border-color: #03c75a;
+  box-shadow: 0 0 0 1px #03c75a;
+}
+
+.input_row {
+  width: 100%;
+}
+
+.input_row:first-child {
+  border-bottom: 1px solid #f0f0f0;
+}
+
+.input_row input {
+  width: 100%;
+  height: 48px;
+  border: none;
+  outline: none;
+  padding: 0 14px;
+  font-family: inherit;
+  font-size: 15px;
+  color: #222222;
+  background-color: transparent;
+}
+
+.input_row input::placeholder {
+  color: #999999;
+  font-size: 14px;
+}
+
+/* 체크박스 & IP보안 */
+.check_area {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  font-size: 13px;
+  padding: 0 2px;
+}
+
+.check {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  color: #666666;
+  cursor: pointer;
+  user-select: none;
+}
+
+.check input[type="checkbox"] {
+  appearance: none;
+  -webkit-appearance: none;
+  width: 18px;
+  height: 18px;
+  border: 1px solid #ccc;
+  border-radius: 3px;
+  outline: none;
+  cursor: pointer;
+  position: relative;
+  background-color: #fff;
+  transition: all 0.15s ease;
+}
+
+.check input[type="checkbox"]:checked {
+  background-color: #03c75a;
+  border-color: #03c75a;
+}
+
+.check input[type="checkbox"]:checked::after {
+  content: "";
+  position: absolute;
+  left: 5px;
+  top: 2px;
+  width: 5px;
+  height: 9px;
+  border: solid #ffffff;
+  border-width: 0 2px 2px 0;
+  transform: rotate(45deg);
+}
+
+.check label {
+  cursor: pointer;
+  font-size: 13px;
+}
+
+.ip_check {
+  display: inline-flex;
+  align-items: center;
+  gap: 4px;
+  font-size: 12px;
+  color: #777777;
+  user-select: none;
+}
+
+.ip_status.on {
+  color: #03c75a;
+  font-weight: 700;
+}
+
+/* 네이버 로그인 버튼 */
+.btn_login {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 100%;
+  height: 52px;
+  border-radius: 6px;
+  background-color: #03c75a;
+  border: none;
+  cursor: pointer;
+  color: #ffffff;
+  font-family: inherit;
+  font-size: 18px;
+  font-weight: 700;
+  letter-spacing: -0.5px;
+  transition: background-color 0.15s ease;
+  touch-action: manipulation;
+  -webkit-tap-highlight-color: transparent;
+}
+
+.btn_login:hover {
+  background-color: #02b351;
+}
+
+.btn_login:active {
+  background-color: #029b46;
+}
+
+/* 하단 퀵 링크 */
+ul.quick_btns {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 10px;
+  list-style: none;
+  margin-top: 2px;
+}
+
+ul.quick_btns li {
+  display: flex;
+  align-items: center;
+}
+
+ul.quick_btns button {
+  font-family: inherit;
+  font-size: 12px;
+  color: #777777;
+  background-color: transparent;
+  border: none;
+  cursor: pointer;
+  padding: 2px;
+  touch-action: manipulation;
+}
+
+ul.quick_btns button:hover {
+  color: #111111;
+  text-decoration: underline;
+}
+
+ul.quick_btns .bar {
+  color: #e4e4e4;
+  font-size: 11px;
+}
+
+/* 푸터 */
+.footer {
+  margin-top: 28px;
+  text-align: center;
+}
+
+.footer_links {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 8px 12px;
+  list-style: none;
+  font-size: 11px;
+  color: #888888;
+  margin-bottom: 8px;
+}
+
+.footer_links li {
+  cursor: pointer;
+}
+
+.footer_links li:hover {
+  text-decoration: underline;
+}
+
+.copyright {
+  font-size: 11px;
+  color: #999999;
+}
+
+.logo_footer {
+  font-weight: 700;
+}
+
+/* 모바일 전용 반응형 (화면 폭 480px 이하) */
+@media (max-width: 480px) {
+  body {
+    padding: 28px 16px 20px;
+    background-color: #ffffff;
+    justify-content: flex-start;
+  }
+
+  .wrap {
+    max-width: 100%;
+  }
+
+  .header {
+    margin-bottom: 22px;
+  }
+
+  .naver_logo svg {
+    width: 135px;
+    height: 26px;
+  }
+
+  .login_card {
+    border: none;
+    box-shadow: none;
+    padding: 0;
+    border-radius: 0;
+  }
+
+  .input_row input {
+    font-size: 16px; /* iOS 자동 줌인 방지 */
+  }
+}
